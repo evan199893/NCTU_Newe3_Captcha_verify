@@ -2,9 +2,9 @@ import cv2 as cv
 import os
 import numpy as np
 
-path='where you save the png file which download by scrape.py '
+path='where you save the step1 png file  '
 allfile=os.listdir(path)
-os.chdir('where save step1 process png file')
+os.chdir('where save step2 png file')
 for one in allfile:
     print(one)
     if one=='.DS_Store': continue
