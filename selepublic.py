@@ -213,6 +213,7 @@ Browser = webdriver.Chrome()
 LoginUrl= ('https://e3new.nctu.edu.tw/login/index.php')
 UserName= ('xxxxxx')
 UserPass= ('xxxxxx')
+Browser.set_window_size(1280,1024)
 for i in range(5):
     if(i==0):
         print("First try!")
