@@ -1,6 +1,6 @@
 # NCTU new_e3 captcha_varify
 
-scrape為爬圖片的程式碼<br>
+scrape.py為爬圖片的程式碼<br>
 tt3.py 為去噪的程式<br>
 tt44.py 為裁切的程式<br>
 tt55.py 為將尺寸統一的程式<br>
