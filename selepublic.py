@@ -19,14 +19,14 @@ def split_digits_in_img(img_array):
     gray1 = img_array
     gray2 = img_array
     img=gray2
-    for t in range(3):
+    for t in range(2):
         for x in range(80):
             for y in range(215): 
                 if x>=6 and x<=74 and y<= 213: 
                     if img[x][y]==112:
                         if  (img[x+1][y]==140 and img[x+2][y]==140 ) or (img[x-1][y]==140 and img[x-2][y]==140) and img[x+1][y]!=255 and img[x-1][y]!=255 and img[x+4][y]!=255:
                             img[x][y]=(140)
-    for t in range(5):
+    for t in range(2):
         for x in range(80):
             for y in range(215): 
                 if x<=76 and y>=3 and y<=200: 
