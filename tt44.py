@@ -81,16 +81,16 @@ for one in allfile:
             st1=one+"_"+str(cc)+".png"
             st2=one+"_"+str(cc+1)+".png"
             cv.imwrite(st1,a1)
-            
+            if(w>=3): break
             if(cc>=2):break 
             cv.imwrite(st2,a2)
-            if(cc>2):break 
+            if(cc>=2):break 
             tmp=li[cc]
-            if(cc<1):
+            if(cc<2):
                 ttmp=li[cc+1]-2
             else:
                 ttmp=94
-            cc+=2
+            cc+=1
         else: 
             strr=one+"_"+str(cc)+".png"
             cv.imwrite(strr,a)
