@@ -154,6 +154,9 @@ def split_digits_in_img(img_array):
             j+=1
         if count1==2:
             break
+    if(len(li)<3):
+        print('reload')
+        return
     tmp=0
     ttmp=li[0]
     cc=0
@@ -234,6 +237,8 @@ for i in range(5):
     img_array=cv.imread(img_filename,cv.IMREAD_GRAYSCALE)
     os.remove('captcha1.png')
     x_list = split_digits_in_img(img_array)
+    if(len(x_list)==0):
+        continue
     varification_code = list()
     for i in range(digits_in_img):
         confidences = model.predict(np.array([x_list[i]]), verbose=0)
