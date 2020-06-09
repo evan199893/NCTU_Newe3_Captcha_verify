@@ -1,4 +1,4 @@
-# NCTU new_e3 captcha_varify
+# NCTU new_e3 captcha_verify
 
 scrape.py為爬圖片的程式碼<br>
 tt3.py 為去噪的程式<br>
