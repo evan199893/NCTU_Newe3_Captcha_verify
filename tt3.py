@@ -3,9 +3,9 @@ import os
 import numpy as np
    
 
-path='/Users/evan/Desktop/catcha_file'
+path='where you save the png file which download by scrape.py '
 allfi=os.listdir(path)
-os.chdir('/Users/evan/Desktop/new')
+os.chdir('where you want to save step1 file')
 for one in allfi:
     if one=='.DS_Store': continue
     thisfi=path+'/'+one
