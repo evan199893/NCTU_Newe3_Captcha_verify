@@ -2,9 +2,9 @@ import cv2 as cv
 import os
 import numpy as np
 
-path='/Users/evan/Desktop/BIML_project/new2'
+path='where you save step2 png file'
 allfile=os.listdir(path)
-os.chdir('/Users/evan/Desktop/BIML_project/new3')
+os.chdir('where you want to save final stage png file')
 for one in allfile:
     if one=='.DS_Store': continue
     thisfi=path+'/'+one
