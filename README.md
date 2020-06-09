@@ -6,4 +6,5 @@ tt44.py 為裁切的程式<br>
 tt55.py 為將尺寸統一的程式<br>
 train.py 訓練model<br>
 predict.py 使用model預測結果<br>
-seletest.py e3一鍵登入<br>
+selepublic.py e3一鍵登入<br>
+In selepublic.py you should input your own username and password and then selepublic.py will automaically input them.<br>
