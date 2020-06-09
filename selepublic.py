@@ -249,4 +249,5 @@ for i in range(5):
     Browser.find_element_by_name('captcha_code').send_keys(captcha)
     Browser.find_element_by_id('password').send_keys(Keys.ENTER)
     time.sleep(1)
+    strs = Browser.find_element_by_id("username").text
 ##Browser.quit()
