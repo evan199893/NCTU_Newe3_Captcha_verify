@@ -244,17 +244,9 @@ for i in range(5):
     for i in range(4):
         final+=str(varification_code[i])
     captcha=final
-    location = Browser.find_element_by_id('captcha-desktop').location
-    size = Browser.find_element_by_id('captcha-desktop').size
-    left=location['x']
-    right=location['x']+size['width']
-    top=location['y']
-    bottom=location['y']+size['height']
     Browser.find_element_by_id('username').send_keys(UserName)
     Browser.find_element_by_id('password').send_keys(UserPass)
-    Browser.find_element_by_name('captcha_code').send_keys(final)
+    Browser.find_element_by_name('captcha_code').send_keys(captcha)
     Browser.find_element_by_id('password').send_keys(Keys.ENTER)
     time.sleep(1)
-    strs = Browser.find_element_by_id("username").text
-    print(strs)
 ##Browser.quit()
