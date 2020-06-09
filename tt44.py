@@ -2,9 +2,9 @@ import cv2 as cv
 import os
 import numpy as np
 
-path='/Users/evan/Desktop/BIML_project/new'
+path='where you save the png file which download by scrape.py '
 allfile=os.listdir(path)
-os.chdir('/Users/evan/Desktop/BIML_project/new2')
+os.chdir('where save step1 process png file')
 for one in allfile:
     print(one)
     if one=='.DS_Store': continue
