@@ -209,7 +209,7 @@ def split_digits_in_img(img_array):
                 ttmp=95
             cc+=1 
     return x_list
-
+##Main program
 Browser = webdriver.Chrome()
 LoginUrl= ('https://e3new.nctu.edu.tw/login/index.php')
 ## NOTICE you should input your username and password there.
