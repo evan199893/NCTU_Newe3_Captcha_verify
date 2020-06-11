@@ -2,7 +2,6 @@ from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 import os
 import numpy as np
-import os
 import sys
 from tensorflow.keras import models
 from tensorflow.keras.preprocessing.image import img_to_array
