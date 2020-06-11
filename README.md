@@ -10,6 +10,6 @@ selepublic.py 實現e3一鍵登入<br>
 <br>
 In selepublic.py you should input your own username and password and then selepublic.py will automaically input them.<br>
 <br>
-If you want to use, you only need to download selepublic.py and cnn_model.h5,NOTICE you should put those two files in same directory make it can load model. <br>
+If you want to use, you only need to download selepublic.py and cnn_model.h5, NOTICE you should put those two files in same directory make it can load model. <br>
 <br>
 NOTICE you should install the chrome driver of selenium.<br>
