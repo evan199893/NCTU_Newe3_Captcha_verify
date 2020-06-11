@@ -12,55 +12,6 @@ import tensorflow as tf
 from PIL import Image
 import time
 
-Browser = webdriver.Chrome()
-LoginUrl= ('https://e3new.nctu.edu.tw/login/index.php')
-## NOTICE you should input your username and password there.
-UserName= ('xxxxxx')
-UserPass= ('xxxxxx')
-Browser.set_window_size(1280,1024)
-for i in range(5):
-    if(i==0):
-        print("First try!")
-    else:
-        print(str(i+1)+" Retrying....")
-    Browser.get(LoginUrl)
-    with open('captcha1.png', 'wb') as file:
-        file.write(Browser.find_element_by_xpath('/html/body/div[5]/div[1]/div[1]/form[1]/img').screenshot_as_png)
-    img_rows = None
-    img_cols = None
-    digits_in_img=4
-    model = None
-    np.set_printoptions(suppress=True, linewidth=150, precision=9, formatter={'float': '{: 0.9f}'.format})
-    if os.path.isfile('cnn_model.h5'):
-        print("Model found.")
-        model = models.load_model('cnn_model.h5')
-    else:
-        print('No trained model found.')
-        exit(-1)
-    
-    img_filename = 'captcha1.png'
-    img_array=cv.imread(img_filename,cv.IMREAD_GRAYSCALE)
-    os.remove('captcha1.png')
-    x_list = split_digits_in_img(img_array)
-    if(len(x_list)==0):
-        continue
-    varification_code = list()
-    for i in range(digits_in_img):
-        confidences = model.predict(np.array([x_list[i]]), verbose=0)
-        result_class = model.predict_classes(np.array([x_list[i]]), verbose=0)
-        varification_code.append(result_class[0])
-        ##print('Digit {0}: Confidence=> {1}    Predict=> {2}'.format(i + 1, np.squeeze(confidences), np.squeeze(result_class)))
-    final=''
-    for i in range(4):
-        final+=str(varification_code[i])
-    captcha=final
-    Browser.find_element_by_id('username').send_keys(UserName)
-    Browser.find_element_by_id('password').send_keys(UserPass)
-    Browser.find_element_by_name('captcha_code').send_keys(captcha)
-    Browser.find_element_by_id('password').send_keys(Keys.ENTER)
-    time.sleep(1)
-    strs = Browser.find_element_by_id("username").text
-##Browser.quit()
 def split_digits_in_img(img_array):
     x_list = list()
     img1 = np.zeros((80,215,1), np.uint8) 
@@ -258,3 +209,53 @@ def split_digits_in_img(img_array):
                 ttmp=95
             cc+=1 
     return x_list
+
+Browser = webdriver.Chrome()
+LoginUrl= ('https://e3new.nctu.edu.tw/login/index.php')
+## NOTICE you should input your username and password there.
+UserName= ('xxxxxx')
+UserPass= ('xxxxxx')
+Browser.set_window_size(1280,1024)
+for i in range(5):
+    if(i==0):
+        print("First try!")
+    else:
+        print(str(i+1)+" Retrying....")
+    Browser.get(LoginUrl)
+    with open('captcha1.png', 'wb') as file:
+        file.write(Browser.find_element_by_xpath('/html/body/div[5]/div[1]/div[1]/form[1]/img').screenshot_as_png)
+    img_rows = None
+    img_cols = None
+    digits_in_img=4
+    model = None
+    np.set_printoptions(suppress=True, linewidth=150, precision=9, formatter={'float': '{: 0.9f}'.format})
+    if os.path.isfile('cnn_model.h5'):
+        print("Model found.")
+        model = models.load_model('cnn_model.h5')
+    else:
+        print('No trained model found.')
+        exit(-1)
+    
+    img_filename = 'captcha1.png'
+    img_array=cv.imread(img_filename,cv.IMREAD_GRAYSCALE)
+    os.remove('captcha1.png')
+    x_list = split_digits_in_img(img_array)
+    if(len(x_list)==0):
+        continue
+    varification_code = list()
+    for i in range(digits_in_img):
+        confidences = model.predict(np.array([x_list[i]]), verbose=0)
+        result_class = model.predict_classes(np.array([x_list[i]]), verbose=0)
+        varification_code.append(result_class[0])
+        ##print('Digit {0}: Confidence=> {1}    Predict=> {2}'.format(i + 1, np.squeeze(confidences), np.squeeze(result_class)))
+    final=''
+    for i in range(4):
+        final+=str(varification_code[i])
+    captcha=final
+    Browser.find_element_by_id('username').send_keys(UserName)
+    Browser.find_element_by_id('password').send_keys(UserPass)
+    Browser.find_element_by_name('captcha_code').send_keys(captcha)
+    Browser.find_element_by_id('password').send_keys(Keys.ENTER)
+    time.sleep(1)
+    strs = Browser.find_element_by_id("username").text
+##Browser.quit()
