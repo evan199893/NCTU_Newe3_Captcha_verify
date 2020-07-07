@@ -7,13 +7,13 @@ from tensorflow.keras import models
 from tensorflow.keras.preprocessing.image import img_to_array
 from tensorflow.keras.preprocessing.image import load_img
 import matplotlib.pyplot as plt
-epochs = 10      #訓練的次數
-img_rows = None   #驗證碼影像檔的高
-img_cols = None   #驗證碼影像檔的寬
-x_list = list()   #存所有驗證碼數字影像檔的array
-y_list = list()   #存所有的驗證碼數字影像檔array代表的正確數字
-x_train = list()  #存訓練用驗證碼數字影像檔的array
-y_train = list()  #存訓練用驗證碼數字影像檔array代表的正確數字
+epochs = 10      
+img_rows = None   
+img_cols = None  
+x_list = list()   
+y_list = list()   
+x_train = list()  
+y_train = list()  
 x_test = list()   
 y_test = list() 
 os.chdir("/Users/evan/Desktop/BIML_project") 
