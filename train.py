@@ -12,7 +12,6 @@ img_rows = None
 img_cols = None  
 x_list = list()   
 y_list = list()   
-x_train = list()  
 y_train = list()  
 x_test = list()   
 y_test = list() 
