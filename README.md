@@ -1,15 +1,15 @@
 # NCTU new_e3 captcha_verify
 
-scrape.py為爬圖片的程式碼<br>
-tt3.py 為去噪的程式<br>
-tt44.py 為裁切的程式<br>
-tt55.py 為將尺寸統一的程式<br>
-train.py 訓練 CNN model<br>
-predict.py 使用model預測結果<br>
-selepublic.py 實現e3一鍵登入<br>
+scrape.py is a Web Crawler program to download huge training captcha file.<br>
+tt3.py is a background noise reduction program.<br>
+tt44.py is a digit location detection program.<br>
+tt55.py is a size normailizing program.<br>
+train.py is a traning CNN model program.<br>
+predict.py is a predict captcha program.<br>
+selepublic.py is a final intergrating login program.<br>
 <br>
-1.In selepublic.py you should input your own username and password in advanced, then selepublic.py will automaically input them.<br>
+1. In selepublic.py you should input your own username and password in advanced, then selepublic.py will input them in exceution step.<br>
 <br>
-2.If you want to use, you only need to download selepublic.py and cnn_model.h5, NOTICE you should put those two files in same directory make it can load model. <br>
+2. You only need to download selepublic.py and cnn_model.h5. ##NOTICE you should put those two files in same directory make it can load model. <br>
 <br>
-3.NOTICE you should install the chrome driver of selenium.<br>
+3. NOTICE you should install the chrome driver of selenium.<br>
