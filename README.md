@@ -14,3 +14,6 @@ split_digits_in_img.py is a neccessary code file for selepublic.py and selepubli
 2. You only need to download selepublic.py and cnn_model.h5. ##NOTICE you should put those two files in same directory make it can load model. <br>
 3. NOTICE you should install the chrome driver of selenium.<br>
 4. You should check the path setting in the code and make the properly setting.<br>
+
+Demo video
+https://youtu.be/KA4EvdrpzaM
